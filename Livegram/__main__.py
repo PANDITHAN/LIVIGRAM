@@ -1,6 +1,6 @@
 import importlib
 from Livegram import dispatcher, updater, Config, bot, dispatcher, LOGGER
-from Livegram.mod import ALL_MODULES
+from Livegram.Mod import ALL_MODULES
 from telegram import Message, Update, Bot, User
 from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler, run_async)
