@@ -1,6 +1,6 @@
 import importlib
 from Livegram import dispatcher, updater, Config, bot, dispatcher, LOGGER
-from Livegram.Mod import ALL_MODULES
+from Livegram.mod import ALL_MODULES
 from telegram import Message, Update, Bot, User
 from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler, run_async)
@@ -18,7 +18,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("Livegram.Mod." + module_name)
+    imported_module = importlib.import_module("Livegram.mod." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
