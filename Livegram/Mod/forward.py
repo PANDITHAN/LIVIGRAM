@@ -3,7 +3,7 @@ import os
 from Livegram import updater, dispatcher, Config
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 from telegram import ParseMode
-from Livegram.mod.sql.blacklist_sql import check_is_black_list
+from Livegram.Mod.sql.blacklist_sql import check_is_black_list
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
