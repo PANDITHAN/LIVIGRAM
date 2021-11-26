@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
-from Livegram import Config
+from Livegram import Config.DB_URI
 
 
 def start() -> scoped_session:
