@@ -26,7 +26,7 @@ def get_args(message):
 
 @bot.on(events.NewMessage(pattern='/b'))
 async def _(event):
-    if not event.from_id in SU:
+    if event.from_id not in SU:
         return
     args = get_args(event)
     r = False
@@ -35,13 +35,13 @@ async def _(event):
        await message.reply("/ban user_id")
        return
     reason = "You are banned."
-      
+
     add_user_to_bl(user_id, reason)
     await event.reply("Banned")
   
 @bot.on(events.NewMessage(pattern='/ub'))
 async def _(event):
-    if not event.from_id in SU:
+    if event.from_id not in SU:
         return
     args = get_args(event)
     r = False
@@ -49,6 +49,6 @@ async def _(event):
     if not user_id:
        await message.reply("/ub user_id")
        return
-  
+
     rem_user_from_bl(user_id)
     await event.reply("Unbanned")

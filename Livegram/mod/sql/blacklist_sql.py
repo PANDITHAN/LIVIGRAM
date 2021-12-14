@@ -33,8 +33,7 @@ def add_user_to_bl(chat_id, reason):
 def check_is_black_list(chat_id):
     """ get the user_id from the message_id """
     try:
-        s__ = SESSION.query(BlackList).get(str(chat_id))
-        return s__
+        return SESSION.query(BlackList).get(str(chat_id))
     finally:
         SESSION.close()
 

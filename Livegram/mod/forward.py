@@ -21,8 +21,8 @@ def forward(update, context):
        context.bot.send_message(chat_id=user['id'], text="You have been banned.")
        return
     message = update.message
-    if not update.effective_message.chat.type == "private":
-    	return
+    if update.effective_message.chat.type != "private":
+        return
     context.bot.forward_message(chat_id=to_c,
                         from_chat_id=update.message.chat_id,
                         message_id=update.message.message_id)

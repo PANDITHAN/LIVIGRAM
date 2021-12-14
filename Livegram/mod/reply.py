@@ -21,8 +21,8 @@ def arg_split_with(event, char):
 
 @bot.on(events.NewMessage(pattern='/r'))
 async def _(event):
-    if not event.from_id in SU:
-        
+    if event.from_id not in SU:
+
         return
     reply = await event.get_reply_message()
     if not reply:
@@ -40,7 +40,6 @@ async def _(event):
     if x != 1:
         id = int(to_send)
         msg = argu
-        await event.client.send_message(id, msg)
     else:
         try:
             id = int(args[0])
@@ -51,5 +50,6 @@ async def _(event):
         if not msg:
             await event.reply("Enter a message to send")
             return
-        await event.client.send_message(id, msg)
+
+    await event.client.send_message(id, msg)
         
